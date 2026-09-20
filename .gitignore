@@ -1,18 +1,8 @@
-# Віртуальне середовище
 .venv/
 venv/
-
-# Кеш Python
 __pycache__/
 *.py[cod]
-
-# Кеш та звіти Ruff
 .ruff_cache/
-
-# Файли баз даних / логів (створюються динамічно)
 /data/
 labs/lab01/data/users.csv
 labs/lab01/data/log.json
-
-# Системні файли
-.DS_Store
