@@ -57,25 +57,3 @@ def check_user_access(user, resource ,users, blocked_users, resources):
         return {"ALLOW":""}
 
     return {"DENY": "Insufficient clearance"}
-
-
-if __name__ == "__main__":
-    print_resources_level(resources=resources, security_levels=security_levels)
-
-    print("[+] Введіть назву юзера та ресурсу для пееревірки доступу або exit в будь який з полів для виходу\n")
-
-    while True:
-        user = input("User: ")
-        resource = input("Resource: ")
-
-        if "exit" == user.lower() or "exit" == resource.lower():
-            break
-
-        if resource not in [r[0] for r in resources]:
-            print("Немає такого ресурсу\n")
-            continue
-
-        res = check_user_access(user=user, resource=resource, users=users, blocked_users=blocked_users, resources=resources)
-
-        print(f"user={user} resource={resource} -> {next(iter(res.keys()))} ({next(iter(res.values()))})\n")
-        

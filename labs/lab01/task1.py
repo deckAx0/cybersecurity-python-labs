@@ -79,39 +79,3 @@ def test_security_password(password, forbidden_passwords, criteria, all_password
         security_level = "very strong"
 
     return security_level, result
-
-
-if __name__ == "__main__":
-    passwords = ["Compli4nc3@Check", "weak", "Risk@Ass3ssment", "guest",
-                "Vulner4bility@Scan", "temp", "P3netration@Test", "demo", "S3curity@Audit",
-                "trial"]
-
-    criteria = {"min_length": 8,
-                "require_digits": True,
-                "require_upper": True,
-                "require_special": True
-                }
-
-    forbidden_passwords = {"weak", "guest", "temp", "demo", "trial", "password"}
-    min_length = criteria.get("min_length")
-
-    if generate_duplicate_passwords(passwords):
-        time.sleep(1)
-        print("[+] 3 дублікати паролів успішно згенеровані та додані до списку паролів.")
-        time.sleep(1)
-        print("[+] Оновлений список паролів:\n" + "\n".join(passwords))
-        time.sleep(5)
-        print("\n[+] Запускаю перевірку пролів...\n")
-        time.sleep(5)
-
-    for password in passwords:
-        level, dic = test_security_password(password, forbidden_passwords, criteria, passwords)
-
-        print(f"Пароль: {password} | Категорія - {level}\n"
-              f"- Має цифру: {dic['has_digits']}\n"
-              f"- Має велику букву: {dic['has_upper']}\n"
-              f"- Має спеціальний символ: {dic['has_special']}\n"
-              f"- Достатня довжина: {dic['is_longer']}\n")
-        time.sleep(0.8)
-
-    print("[+] Кінець")

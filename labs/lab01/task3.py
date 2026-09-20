@@ -17,6 +17,19 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 users_db = []
 
+# Task 3
+users_to_register = (
+                        ('admin', 'password1234567890'),
+                        ('qa_test', 'Axw1#0!Zq3C1mgA@a07MnAg'),
+                        ('nazar', '12345678901234567890'),
+                        ('matviy', 'Vk!8A?7$aCjA19JaAh%qwgA45'),
+                        ('ebaka228', 'ebaka22888888888'),
+                        ('kerberos_cooker', 'roasting_attacks_enjoyer'),
+                        ('wiener', 'peteraasdfasdeasdfsadfgdsdsf'),
+                        ('" OR 1=1-- -', 'asdfasdfasdf" OR 1=1-- -'),
+                        ('osiris', '4bid_the_best_XDDDDD'),
+                        ('{{7*7}}', 'reallystrongpassword123456')
+                        )
 
 class ValidationError(Exception):
     pass
@@ -158,21 +171,3 @@ def main():
                 break
         except (ValueError, ValidationError) as e:
             print(f'[-] {e}')
-
-
-if __name__ == "__main__":
-
-    users_to_register = (
-                        ('admin', 'password1234567890'),
-                        ('qa_test', 'Axw1#0!Zq3C1mgA@a07MnAg'),
-                        ('nazar', '12345678901234567890'),
-                        ('matviy', 'Vk!8A?7$aCjA19JaAh%qwgA45'),
-                        ('ebaka228', 'ebaka22888888888'),
-                        ('kerberos_cooker', 'roasting_attacks_enjoyer'),
-                        ('wiener', 'peteraasdfasdeasdfsadfgdsdsf'),
-                        ('" OR 1=1-- -', 'asdfasdfasdf" OR 1=1-- -'),
-                        ('osiris', '4bid_the_best_XDDDDD'),
-                        ('{{7*7}}', 'reallystrongpassword123456')
-                        )
-
-    main()
