@@ -1,0 +1,3 @@
+STUDENT_NAME = "Ілля Шевцов"
+GROUP_NAME = "КБ-203"
+VARIANT_NUMBER = 13
